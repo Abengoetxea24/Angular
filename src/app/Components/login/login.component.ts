@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  $contraseña: string = '';
+  $usuario: string = '';
+
+  login(){
+
+    
+    if(this.$usuario == 'admin' && this.$contraseña == 'admin'){
+      alert('Bienvenido');
+    }else{
+      alert('Usuario o contraseña incorrectos');
+    }
+  }
+
 }
