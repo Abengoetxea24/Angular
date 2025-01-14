@@ -9,6 +9,7 @@ import { SobreNosotrosComponent } from './Conponents/sobre-nosotros/sobre-nosotr
 import { RescatadosPubliComponent } from './Conponents/rescatados-publi/rescatados-publi.component';
 import { DonateComponent } from './Conponents/donate/donate.component';
 import { AdminComponent } from './Conponents/admin/admin.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminComponent } from './Conponents/admin/admin.component';
     SobreNosotrosComponent,
     RescatadosPubliComponent,
     DonateComponent,
-    AdminComponent
+    AdminComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
