@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  constructor(private router: Router) {}
 
   contrasena: string = '';
   usuario: string = '';
@@ -14,9 +15,10 @@ export class LoginComponent {
 
     
     if(this.usuario == 'admin' && this.contrasena == 'admin'){
-      alert('Bienvenido');
+      this.router.navigate(['/Admin']);
     }else{
-      alert('Usuario o contraseña incorrectos');
+      this.router.navigate(['/Home']);
+
     }
   }
 
