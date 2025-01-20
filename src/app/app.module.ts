@@ -12,6 +12,7 @@ import { RescatadosPubliComponent } from './Components/rescatados-publi/rescatad
 import { DonateComponent } from './Components/donate/donate.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { FormularioComponent } from './Components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     RescatadosPubliComponent,
     DonateComponent,
     AdminComponent,
-    NavbarComponent
+    NavbarComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
