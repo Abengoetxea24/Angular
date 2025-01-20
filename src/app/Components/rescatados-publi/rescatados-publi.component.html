@@ -1,12 +1,24 @@
-<form>
-    Nombre: <input type="text" ngModel="nombre"><br>
-    DNI: <input type="text" placeholder="obligatorio" ngModel="dni"><br>
-    Metodo de pago:<br>
-    <input type="radio" ngModel="pago" name="medotoPago" value="tarjeta">Tarjeta<br>
-    <input type="radio" ngModel="pago" name="medotoPago" value="paypal">Paypal<br>
-    <input type="radio" ngModel="pago" name="medotoPago" value="numero-cuenta">Numero de cuenta<br>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-    <button >ENVIAR</button>
+  Nombre: <input type="text" name="nombre" ngModel="nombre" /><br>
+
+  DNI: <input type="text" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br>
+
+  <div *ngIf="form.submitted || form.controls['dni']?.touched">
+    <div *ngIf="form.controls['dni']?.hasError('required')">
+      El DNI es obligatorio.
+    </div>
+    <div *ngIf="form.controls['dni']?.hasError('pattern')">
+      El DNI debe tener al menos 8 números y 1 letra al final.
+    </div>
+  </div>
+
+  Metodo de pago:<br>
+  <input type="radio" ngModel="pago" name="medotoPago" value="tarjeta" required />Tarjeta<br>
+  <input type="radio" ngModel="pago" name="medotoPago" value="paypal" />Paypal<br>
+  <input type="radio" ngModel="pago" name="medotoPago" value="numero-cuenta" />Numero de cuenta<br>
+
+  <button type="submit">ENVIAR</button>
 
 </form>
 

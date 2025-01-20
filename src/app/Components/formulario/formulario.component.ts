@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent {
+  patternDni = '^[0-9]{8}[A-Z]$';
+  dni: string = "";
 
+  onSubmit(form: any) {
+    console.log(form.value);
+  }
 }
