@@ -17,9 +17,8 @@ const routes: Routes = [
   {path: 'Rescatados', component: RescatadosPubliComponent},
   {path: 'Donar', component: DonateComponent},
   {path: 'Login', component: LoginComponent},
-    {path: 'Admin', component: AdminComponent}, 
+  {path: 'Admin', component: AdminComponent}, 
   {path: 'Navbar', component: NavbarComponent},
-  
 ];
 
 
