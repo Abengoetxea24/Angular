@@ -1,0 +1,35 @@
+/*Colores*/
+/* Contenedor que ocupa toda la pantalla */
+.containerIMG {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Imagen que ocupa toda la pantalla */
+.fullscreen-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background-color: rgba(58, 62, 54, 0.6862745098);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto cuando se hace scroll */
+.overlay-div.scrolled {
+  width: 100%; /* Expande el div azul cuando se hace scroll */
+  background-color: rgba(58, 62, 54, 0.6862745098);
+}/*# sourceMappingURL=home.component.css.map */
