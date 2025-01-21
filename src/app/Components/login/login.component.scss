@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form-section {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 380px;
+}
+
+.form-section button {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1d3446;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #465b73;
+}
+
+.image-section {
+  flex: 1;
+  background: url('../../../assets/img/barco.jpg') no-repeat center center/cover;
+}
