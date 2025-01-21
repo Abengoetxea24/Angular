@@ -6,10 +6,10 @@
 
   <div *ngIf="form.submitted || form.controls['dni']?.touched">
     <div *ngIf="form.controls['dni']?.hasError('required')">
-      El DNI es obligatorio.
+      <p style="color: red">El DNI es obligatorio.</p>
     </div>
     <div *ngIf="form.controls['dni']?.hasError('pattern')">
-      El DNI debe tener al menos 8 números y 1 letra al final.
+      <p style="color: red">El DNI debe tener al menos 8 números y 1 letra al final.</p>
     </div>
   </div>
 
@@ -17,6 +17,10 @@
   <input type="radio" ngModel="pago" name="medotoPago" value="tarjeta" required />Tarjeta<br>
   <input type="radio" ngModel="pago" name="medotoPago" value="paypal" />Paypal<br>
   <input type="radio" ngModel="pago" name="medotoPago" value="numero-cuenta" />Numero de cuenta<br>
+
+  <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
+    <p style="color: red;">Por favor, seleccione un método de pago.</p>
+  </div>
 
   <button type="submit">ENVIAR</button>
 
