@@ -1,5 +1,4 @@
-/*Colores*/
-/* Contenedor que ocupa toda la pantalla */
+
 .containerIMG {
   position: relative;
   width: 100%;
@@ -7,12 +6,10 @@
   overflow: hidden;
 }
 
-/* Imagen que ocupa toda la pantalla */
+
 .fullscreen-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -30,6 +27,21 @@
 
 /* Efecto cuando se hace scroll */
 .overlay-div.scrolled {
-  width: 100%; /* Expande el div azul cuando se hace scroll */
+  width: 100%;
   background-color: rgba(58, 62, 54, 0.6862745098);
-}/*# sourceMappingURL=home.component.css.map */
+}
+
+
+
+.info {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 30%;
+}
+
+.imgInfo{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
