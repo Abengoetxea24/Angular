@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añafir re</title>
+    <title>Añadir rescatados</title>
 </head>
+
 <body>
-    
+    <div class="base_form">
+        <form class="form_content">
+            <div class="col_1">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                </div>
+                <div>
+                    <label for="edad">Edad:</label>
+                    <input type="int" id="edad" name="edad">
+                </div>
+                <div>
+                    <label for="sexo">Sexo:</label>
+                    <input type="text" id="sexo" name="sexo">
+                </div>
+            </div>
+            <div class="col_2">
+                <div>
+                    <label for="procedencia">Procedencia:</label>
+                    <input type="text" id="procedencia" name="procedencia">
+                </div>
+                <div>
+                    <label for="valoracion_medica">Valoracion_Medica:</label>
+                    <input type="text" id="valoracion_medica" name="valoracion_medica">
+                </div>
+                <div>
+                    <label for="medico_id">Medico_ID:</label>
+                    <input type="text" id="medico_id" name="medico_id">
+                </div>
+                <div>
+                    <label for="recate_id">Rescate_ID:</label>
+                    <input type="text" id="recate_id" name="rescte_id">
+                </div>
+            </div>
+            <button (click)="enviar()">Enviar</button>
+
+
+        </form>
+    </div>
 </body>
+
 </html>
