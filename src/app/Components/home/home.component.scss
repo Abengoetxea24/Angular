@@ -127,13 +127,15 @@
 .content-item {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 500px;
+  margin-left: 10%;
 }
 
 /* Imagen */
 .content-item img {
   height: auto;
   border-radius: 8px; 
+  width: 800px;
 }
 
 /* Texto */
