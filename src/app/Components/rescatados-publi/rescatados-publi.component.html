@@ -1,6 +1,6 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-  Nombre: <input type="text" name="nombre" ngModel="nombre" /><br>
+  Nombre: <input type="text" name="nombre" [(ngModel)]="nombre" /><br>
 
   DNI: <input type="text" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br>
 
@@ -14,9 +14,9 @@
   </div>
 
   Metodo de pago:<br>
-  <input type="radio" ngModel="pago" name="medotoPago" value="tarjeta" required />Tarjeta<br>
-  <input type="radio" ngModel="pago" name="medotoPago" value="paypal" />Paypal<br>
-  <input type="radio" ngModel="pago" name="medotoPago" value="numero-cuenta" />Numero de cuenta<br>
+  <input type="radio" [(ngModel)]="pago" name="medotoPago" value="tarjeta" required />Tarjeta<br>
+  <input type="radio" [(ngModel)]="pago" name="medotoPago" value="paypal" />Paypal<br>
+  <input type="radio" [(ngModel)]="pago" name="medotoPago" value="numero-cuenta" />Numero de cuenta<br>
 
   <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
     <p style="color: red;">Por favor, seleccione un método de pago.</p>
