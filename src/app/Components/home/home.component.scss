@@ -42,14 +42,103 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 30%;
-  background-color: #3a3e36af;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Efecto cuando se hace scroll */
-.overlay-div.scrolled {
   width: 100%;
   background-color: #3a3e36af;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+
+  h1, h4{
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
 }
+
+
+.info {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*contenedor principal */
+.imgInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px; 
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/*contenedor img */
+.imgContainer {
+  position: relative; 
+  overflow: hidden; 
+}
+
+/* Estilo de las imágenes */
+.imgContainer img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; 
+}
+
+/* Fondo(overlay) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+}
+
+
+.hoverText {
+  color: white; 
+  font-size: 18px; 
+  text-align: center;
+  padding: 10px;
+  font-weight: bold; 
+}
+
+.imgContainer:hover img {
+  transform: scale(1.1); 
+}
+
+.imgContainer:hover .overlay {
+  opacity: 1; 
+}
+
+/* Estilo general como ayudar*/
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Imagen */
+.content-item img {
+  height: auto;
+  border-radius: 8px; 
+}
+
+/* Texto */
+.content-item .text {
+  max-width: 600px;
+}
+
 

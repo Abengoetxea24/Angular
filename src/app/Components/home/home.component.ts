@@ -5,8 +5,10 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent {
-  isScrolled: boolean = false; // Comprobar si se ha hecho scroll
+  /*isScrolled: boolean = false; // Comprobar si se ha hecho scroll
 
   // Detecta el scroll
   @HostListener('window:scroll', ['$event'])
@@ -17,6 +19,6 @@ export class HomeComponent {
     } else {
       this.isScrolled = false; // Restaura el estado cuando el scroll es pequeño
     }
-  }
+  }*/
 }
 
