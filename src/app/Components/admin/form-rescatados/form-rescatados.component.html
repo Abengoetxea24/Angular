@@ -9,53 +9,83 @@
 
 <body>
     <div class="base_form">
-        <form class="form_content">
+        <form class="form_content" (submit)="crearRescatado(); $event.preventDefault()">
             <h1 class="text">Rescatado</h1>
 
             <div class="col_1">
                 <div>
-                    
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+                    <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required>
                 </div>
                 <div>
                     <label for="apellido">Apellido :</label>
-                    <input type="text" id="apellido" name="apellido">
+                    <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" required>
                 </div>
                 <div>
                     <label for="edad">Edad:</label>
-                    <input type="int" id="edad" name="edad">
+                    <input type="number" id="edad" name="edad" [(ngModel)]="edad" required>
                 </div>
                 <div>
                     <label for="sexo">Sexo:</label>
-                    <input type="text" id="sexo" name="sexo">
+                    <input type="text" id="sexo" name="sexo" [(ngModel)]="sexo" required>
                 </div>
             </div>
             <div class="col_2">
                 <div>
                     <label for="procedencia">Procedencia:</label>
-                    <input type="text" id="procedencia" name="procedencia">
+                    <input type="text" id="procedencia" name="procedencia" [(ngModel)]="procedencia" required>
                 </div>
                 <div>
-                    <label for="valoracion_medica">Valoracion_Medica:</label>
-                    <input type="text" id="valoracion_medica" name="valoracion_medica">
+                    <label for="valoracion_medica">Valoración Médica:</label>
+                    <input type="text" id="valoracion_medica" name="valoracion_medica" [(ngModel)]="valoracion_medica" required>
                 </div>
                 <div>
-                    <label for="medico_id">Medico_ID:</label>
-                    <input type="text" id="medico_id" name="medico_id">
+                    <label for="medico_id">Médico ID:</label>
+                    <input type="text" id="medico_id" name="medico_id" [(ngModel)]="medico_id" required>
                 </div>
                 <div>
-                    <label for="recate_id">Rescate_ID:</label>
-                    <input type="text" id="recate_id" name="rescte_id">
+                    <label for="rescate_id">Rescate ID:</label>
+                    <input type="text" id="rescate_id" name="rescate_id" [(ngModel)]="rescate_id" required>
                 </div>
             </div>
 
-            
-
-        <button class="boton" (click)="enviar()">Enviar</button>
-
+            <button class="boton" type="submit">{{ rescatadoSeleccionado === -1 ? 'Añadir' : 'Actualizar' }}</button>
+            <button class="boton" type="button" (click)="limpiarFormulario()">Cancelar</button>
         </form>
     </div>
+
+        <h2>Lista de Rescatados</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                    <th>Procedencia</th>
+                    <th>Valoración Médica</th>
+                    <th>Médico ID</th>
+                    <th>Rescate ID</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rescatado of rescatados; let i = index">
+                    <td>{{ rescatado.nombre }}</td>
+                    <td>{{ rescatado.apellido }}</td>
+                    <td>{{ rescatado.edad }}</td>
+                    <td>{{ rescatado.sexo }}</td>
+                    <td>{{ rescatado.procedencia }}</td>
+                    <td>{{ rescatado.valoracion_medica }}</td>
+                    <td>{{ rescatado.medico_id }}</td>
+                    <td>{{ rescatado.rescate_id }}</td>
+                    <td>
+                        <button (click)="seleccionarRescatado(i)">Editar</button>
+                        <button (click)="eliminarRescatado(i)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </body>
 
 </html>
