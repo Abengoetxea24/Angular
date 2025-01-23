@@ -8,7 +8,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RescatadosPubliComponent } from './Components/rescatados-publi/rescatados-publi.component';
 import { SobreNosotrosComponent } from './Components/sobre-nosotros/sobre-nosotros.component';
-
+import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
 
 
 const routes: Routes = [
@@ -17,8 +17,10 @@ const routes: Routes = [
   {path: 'Rescatados', component: RescatadosPubliComponent},
   {path: 'Donar', component: DonateComponent},
   {path: 'Login', component: LoginComponent},
-    {path: 'Admin', component: AdminComponent}, 
+  {path: 'Admin', component: AdminComponent}, 
   {path: 'Navbar', component: NavbarComponent},
+  {path: 'Form-rescatados', component: FormRescatadosComponent}
+
   
 ];
 

@@ -9,4 +9,13 @@ import { NgModule } from '@angular/core';
 })
 export class AppComponent {
   title = 'Reto-3';
+  visible = true;
+
+  ocultar(){
+    this.visible = false;
+  }
+
+
+
+
 }

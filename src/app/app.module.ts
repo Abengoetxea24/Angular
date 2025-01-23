@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,FormControl } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +12,8 @@ import { RescatadosPubliComponent } from './Components/rescatados-publi/rescatad
 import { DonateComponent } from './Components/donate/donate.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
-import { FormularioComponent } from './Components/formulario/formulario.component';
+import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
+import { FormDonacionComponent } from './Components/form-donacion/form-donacion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormularioComponent } from './Components/formulario/formulario.componen
     DonateComponent,
     AdminComponent,
     NavbarComponent,
-    FormularioComponent
+    FormRescatadosComponent,
+    FormDonacionComponent
   ],
   imports: [
     BrowserModule,
