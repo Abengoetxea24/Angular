@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-root',

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Colores*/
 .colornavbar {
   background-color: #233a50 !important;
@@ -46,4 +47,8 @@
 /* Mostrar subrayado al pasar el mouse */
 .navbar .nav-link.enlaces:hover::after {
   width: 100%;
+=======
+.colorNavbar {
+  background-color: #233a50 !important;
+>>>>>>> ace7de28812e9845bdf8255c7040d1c73e341767
 }/*# sourceMappingURL=navbar.component.css.map */

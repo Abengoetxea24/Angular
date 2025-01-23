@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sources":["../_variables.scss","navbar.component.scss","navbar.component.css"],"names":[],"mappings":"AAAA,UAAA;ACEA;EACE,oCAAA;ACAF;;ADGA;EACE,uBAAA;ACAF;;ADGA;EACE,kBAAA;ACAF;;ADGA;EACE,uBAAA;EACA,OAAA;ACAF;;ADGA;EACE,kBAAA;EAEA,gCAAA;EACA,WAAA;EACA,eAAA;EACA,qBAAA;ACDF;;ADIA,mCAAA;AACA;EACE,qBAAA;EACA,kBAAA;EACA,2BAAA;ACDF;;ADIA,cAAA;AACA;EACE,WAAA;EACA,kBAAA;EACA,OAAA;EACA,SAAA;EACA,QAAA;EACA,WAAA;EACA,yBAAA;EACA,2BAAA;ACDF;;ADIA,wCAAA;AACA;EACE,WAAA;ACDF","file":"navbar.component.css"}
+=======
+{"version":3,"sources":["navbar.component.scss","navbar.component.css"],"names":[],"mappings":"AAEA;EAEA,oCAAA;ACFA","file":"navbar.component.css"}
+>>>>>>> ace7de28812e9845bdf8255c7040d1c73e341767
