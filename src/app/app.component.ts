@@ -11,9 +11,13 @@ import { NgModule } from '@angular/core';
 export class AppComponent {
   title = 'Reto-3';
   visible = true;
+  visible2 = true;
 
   ocultar(){
     this.visible = false;
+  }
+  ocultar2(){
+    this.visible2 = false;
   }
 
 
