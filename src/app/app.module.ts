@@ -13,6 +13,7 @@ import { DonateComponent } from './Components/donate/donate.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormRescatadosComponent } from './Components/admin/form-rescatados/form
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
