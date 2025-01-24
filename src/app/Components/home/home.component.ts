@@ -8,17 +8,13 @@ import { Component, HostListener } from '@angular/core';
 
 
 export class HomeComponent {
-  /*isScrolled: boolean = false; // Comprobar si se ha hecho scroll
+  // Textos para la parte trasera de las tarjetas
+  imagenesCards = [
+    { text: 'Texto 1' },
+    { text: 'Texto 2' },
+    { text: 'Texto 3' },
+    { text: 'Texto 4' },
+  ];
 
-  // Detecta el scroll
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    // Comprobar si el scroll ha pasado cierta cantidad (ejemplo: 100px)
-    if (window.scrollY > 50) {
-      this.isScrolled = true; // Cambia el estado cuando se ha desplazado
-    } else {
-      this.isScrolled = false; // Restaura el estado cuando el scroll es pequeño
-    }
-  }*/
 }
 
