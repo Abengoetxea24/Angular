@@ -1,76 +1,40 @@
-<p>admin works!</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div>
+  <!-- Botón para redirigir al formulario de añadir rescatados -->
+  <button routerLink="/form-rescatados" routerLink="/Form-rescatados" class="btn btn-primary">Añadir Rescatado</button>
 
-</head>
-<body>
-    <button routerLink="/Form-rescatados">Añadir rescatados</button>
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>twitter</td>
-          </tr>
-        </tbody>
-      </table>
-</body>
-</html>
-
+  <!-- Tabla que muestra la lista de rescatados -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Sexo</th>
+        <th>Procedencia</th>
+        <th>Valoración Médica</th>
+        <th>Médico ID</th>
+        <th>Rescate ID</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iteramos sobre los rescatados para mostrarlos en la tabla -->
+      <tr *ngFor="let rescatado of rescatados; let i = index">
+        <td>{{ rescatado.nombre }}</td>
+        <td>{{ rescatado.apellido }}</td>
+        <td>{{ rescatado.edad }}</td>
+        <td>{{ rescatado.sexo }}</td>
+        <td>{{ rescatado.procedencia }}</td>
+        <td>{{ rescatado.valoracion_medica }}</td>
+        <td>{{ rescatado.medico_id }}</td>
+        <td>{{ rescatado.rescate_id }}</td>
+        <td>
+          <!-- Botón para editar (redirige al formulario con el índice del rescatado) -->
+          <button class="btn btn-warning" routerLink="/Form-rescatados" [queryParams]="{ index: i }">Editar</button>
+          <!-- Botón para eliminar -->
+          <button class="btn btn-danger" (click)="eliminarRescatado(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
