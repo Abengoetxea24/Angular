@@ -10,20 +10,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Reto-3';
+  visible = true;
+  visible2 = true;
 
-  /* Variable para controlar la visibilidad del login en el navbar */
-  mostrarNavbar:boolean = true;
-
-  //Controlar la visibilidad (.suscribe) llamando al método
-  constructor(private router: Router) {
-    this.router.events.subscribe(() => {
-      this.updateMostrarNavbar();
-    });
+  ocultar(){
+    this.visible = false;
+  }
+  ocultar2(){
+    this.visible2 = false;
   }
 
-  // Actualiza la visibilidad del navbar según la ruta
-  private updateMostrarNavbar(): void {
-    const currentRoute = this.router.url; //Si la ruta no es /login se muestra el navbar
-    this.mostrarNavbar = currentRoute !== '/Login'; //Ocultar navbar en login
-  }
+
+
+
 }
