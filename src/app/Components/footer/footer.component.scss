@@ -1,0 +1,27 @@
+@import "../scss/variables";
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $azulNB;
+    color: white;
+    text-align: center;
+ }
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.footer-text {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}

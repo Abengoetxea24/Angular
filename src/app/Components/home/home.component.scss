@@ -39,10 +39,11 @@
 }
 
 .infoQuienesSomos {
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 30%;
+
+  @media (max-width: 768px) {
+    margin: 50px 10%;
+  }
 
   .btn1 {
     text-decoration: none;
@@ -53,29 +54,28 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Transición para el color de fondo */
+    transition: background-color 0.3s;
   }
+
   .btn1:hover {
-    background-color: $grisNB; /* Color de fondo al pasar el mouse */
-}
+    background-color: $grisNB;
+  }
 }
 
-/*contenedor principal */
+/* Contenedor principal */
 .imgInfo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 10%;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; /* Cambiamos a una sola columna */
-    margin-left: 5%;
-    margin-right: 5%;
+    grid-template-columns: 1fr;
+    margin: 0 5%;
   }
 }
 
-/*contenedor img */
+/* Contenedor img */
 .imgContainer {
   position: relative;
   overflow: hidden;
@@ -89,7 +89,7 @@
   border-radius: 2%;
 }
 
-/* Fondo(overlay) */
+/* Fondo (overlay) */
 .overlay {
   position: absolute;
   top: 0;
@@ -120,20 +120,25 @@
   opacity: 1;
 }
 
-/* Estilo general COMO AYUDAR*/
+/* Estilo general COMO AYUDAR */
+.seccionAyudaContainer {
+  margin-bottom: 80px;
+}
 
-.secionAyuda {
+.seccionAyuda {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-right: 10%;
-
+  margin: 5% 10%;
   gap: 20px;
 
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin: 5% 5%;
+  }
+
   img {
-    width: 700px;
-    height: 400px;
+    width: 100%;
+    height: auto;
     border-radius: 2%;
   }
 }
@@ -151,6 +156,11 @@
     gap: 20px;
     justify-content: center;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     img {
       width: 300px;
       height: 200px;
@@ -159,4 +169,55 @@
   }
 }
 
+/* Sección COMO PUEDES AYUDAR */
+.ayudas-container-principal {
+  text-align: center;
+  margin-bottom: 80px;
+}
 
+.ayudas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 40px;
+}
+
+.ayudas-item {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  overflow: hidden;
+}
+
+.ayudas-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(50%);
+  border-radius: 4%;
+}
+
+.ayudas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ayudas-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  padding: 10px;
+  border-radius: 5px;
+}
