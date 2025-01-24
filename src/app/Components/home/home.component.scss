@@ -1,23 +1,5 @@
-@import "../variables";
-
-// .imgHome {
-//   background-image: url("../../../assets/img/homerescate.jpg");
-//   width: 100%;
-//   height: 100%;
-//   background-repeat: no-repeat;
-//   object-fit: cover;
-//   position: absolute;
-
-//   .infoHome {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     height: 100%;
-//     width: 30%;
-//     background-color: rgba(138, 138, 141, 0.719);
-//     margin-left: 100px;
-//   }
-// }
+@import "../scss/variables";
+@import "../scss/imagenes";
 
 /* Contenedor que ocupa toda la pantalla */
 .containerIMG {
@@ -46,43 +28,59 @@
   background-color: #3a3e36af;
 
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 
-  h1, h4{
+  h1,
+  h4 {
     color: rgb(255, 255, 255);
     text-align: center;
   }
 }
 
-
-.info {
+.infoQuienesSomos {
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 50px;
   margin-bottom: 50px;
+
+  .btn1 {
+    text-decoration: none;
+    background-color: $azulNB; 
+    color: white; 
+    border: none; 
+    border-radius: 12px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; /* Transición para el color de fondo */
+  }
+  .btn1:hover {
+    background-color: $grisNB; /* Color de fondo al pasar el mouse */
+}
 }
 
 /*contenedor principal */
 .imgInfo {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 10px; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin-left: 10%;
   margin-right: 10%;
 }
 
 /*contenedor img */
 .imgContainer {
-  position: relative; 
-  overflow: hidden; 
+  position: relative;
+  overflow: hidden;
 }
 
 /* Estilo de las imágenes */
 .imgContainer img {
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease; 
+  height: 400px;
+  transition: transform 0.3s ease;
+  border-radius: 2%;
 }
 
 /* Fondo(overlay) */
@@ -93,54 +91,135 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
 }
 
-
 .hoverText {
-  color: white; 
-  font-size: 18px; 
+  color: white;
+  font-size: 18px;
   text-align: center;
   padding: 10px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .imgContainer:hover img {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .imgContainer:hover .overlay {
-  opacity: 1; 
+  opacity: 1;
 }
 
-/* Estilo general como ayudar*/
-.content-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+/* Estilo general COMO AYUDAR*/
 
-.content-item {
-  display: flex;
-  align-items: center;
-  gap: 500px;
+.secionAyuda {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5%;
   margin-left: 10%;
+  margin-right: 10%;
+
+  gap: 20px;
+
+  img {
+    width: 700px;
+    height: 400px;
+    border-radius: 2%;
+  }
 }
 
-/* Imagen */
-.content-item img {
-  height: auto;
-  border-radius: 8px; 
-  width: 800px;
+.ayudarInfoContainer {
+  h1 {
+    text-align: center;
+    text-decoration: underline;
+    padding: 50px;
+  }
+
+  .imagenesContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+
+    img {
+      width: 300px;
+      height: 200px;
+      border-radius: 2%;
+    }
+  }
 }
 
-/* Texto */
-.content-item .text {
-  max-width: 600px;
+
+/*FLIP - CARDS JS*/
+@import 'card-data';
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
+.flip-card {
+  width: 150px;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
 
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &-front,
+  &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  &-front {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
+
+  &-back {
+    background: #333;
+    color: #fff;
+    transform: rotateY(180deg);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+// Generar estilos dinámicos para cada tarjeta
+@for $i from 1 through length($cards) {
+  .flip-card:nth-child(#{$i}) .flip-card-front {
+    background-image: url(#{map-get(nth($cards, $i), image)});
+  }
+
+  .flip-card:nth-child(#{$i}) .flip-card-back {
+    content: map-get(nth($cards, $i), text);
+  }
+}

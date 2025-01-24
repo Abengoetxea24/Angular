@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
     Nombre: <input type="text" name="nombre" [(ngModel)]="nombre" /><br>
   
@@ -24,5 +24,36 @@
   
     <button type="submit">ENVIAR</button>
   
-  </form>
+  </form> -->
+
+
+  <div class="form-container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" /><br />
+  
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br />
+  
+      <div *ngIf="form.submitted || form.controls['dni']?.touched">
+        <div *ngIf="form.controls['dni']?.hasError('required')">
+          <p class="error">El DNI es obligatorio.</p>
+        </div>
+        <div *ngIf="form.controls['dni']?.hasError('pattern')">
+          <p class="error">El DNI debe tener al menos 8 números y 1 letra al final.</p>
+        </div>
+      </div>
+  
+      <label>Metodo de pago:</label><br />
+      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="tarjeta" required />Tarjeta<br />
+      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="paypal" />Paypal<br />
+      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="numero-cuenta" />Número de cuenta<br />
+  
+      <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
+        <p class="error">Por favor, seleccione un método de pago.</p>
+      </div>
+  
+      <button type="submit">ENVIAR</button>
+    </form>
+  </div>
   
