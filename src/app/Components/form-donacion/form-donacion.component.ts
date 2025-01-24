@@ -46,6 +46,6 @@ export class FormDonacionComponent {
 
   closeDialog(): void {
     this.showDialog = false;
-    this.router.navigate(['/Home']);
+    this.router.navigate(['/Home']); /*Routing para redirigir a la home al pulsar el botón de cerrar en el popup*/
   }
 }
