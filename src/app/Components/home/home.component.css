@@ -188,11 +188,11 @@
 }
 
 .ayudas-image {
-  width: 100%;
-  height: auto;
+  width: 500px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(50%); /*Ajustar la visibilidad de la imagen para que se vea el texto*/
   border-radius: 4%;
 }
 

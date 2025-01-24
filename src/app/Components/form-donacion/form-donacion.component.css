@@ -1,4 +1,224 @@
+@charset "UTF-8";
 /*Colores*/
+/*Colores*/
+/* Contenedor que ocupa toda la pantalla */
+.containerIMG {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Imagen que ocupa toda la pantalla */
+.fullscreen-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(58, 62, 54, 0.6862745098);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay-div h1,
+.overlay-div h4 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.infoQuienesSomos {
+  margin: 50px 30%;
+}
+@media (max-width: 768px) {
+  .infoQuienesSomos {
+    margin: 50px 10%;
+  }
+}
+.infoQuienesSomos .btn1 {
+  text-decoration: none;
+  background-color: #233a50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.infoQuienesSomos .btn1:hover {
+  background-color: #8698a2;
+}
+
+/* Contenedor principal */
+.imgInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 0 10%;
+}
+@media (max-width: 768px) {
+  .imgInfo {
+    grid-template-columns: 1fr;
+    margin: 0 5%;
+  }
+}
+
+/* Contenedor img */
+.imgContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo de las imágenes */
+.imgContainer img {
+  width: 100%;
+  height: 400px;
+  transition: transform 0.3s ease;
+  border-radius: 2%;
+}
+
+/* Fondo (overlay) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hoverText {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.imgContainer:hover img {
+  transform: scale(1.1);
+}
+
+.imgContainer:hover .overlay {
+  opacity: 1;
+}
+
+/* Estilo general COMO AYUDAR */
+.seccionAyudaContainer {
+  margin-bottom: 80px;
+}
+
+.seccionAyuda {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 5% 10%;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .seccionAyuda {
+    grid-template-columns: 1fr;
+    margin: 5% 5%;
+  }
+}
+.seccionAyuda img {
+  width: 100%;
+  height: auto;
+  border-radius: 2%;
+}
+
+.ayudarInfoContainer h1 {
+  text-align: center;
+  text-decoration: underline;
+  padding: 50px;
+}
+.ayudarInfoContainer .imagenesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .ayudarInfoContainer .imagenesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.ayudarInfoContainer .imagenesContainer img {
+  width: 300px;
+  height: 200px;
+  border-radius: 2%;
+}
+
+/* Sección COMO PUEDES AYUDAR */
+.ayudas-container-principal {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.ayudas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 40px;
+}
+
+.ayudas-item {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  overflow: hidden;
+}
+
+.ayudas-image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(50%); /*Ajustar la visibilidad de la imagen para que se vea el texto*/
+  border-radius: 4%;
+}
+
+.ayudas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ayudas-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .tituloDonar {
   text-align: center;
   margin-top: 2%;
