@@ -1,4 +1,4 @@
- <div class = "containerPrincipalForm">
+<div class = "containerPrincipalForm">
     <h1 class = "tituloDonar">Tu ayuda salva vidas</h1>
     <div class="form-container">
 
@@ -29,7 +29,18 @@
 
         <button type="submit">ENVIAR</button>
       </form>
+    </div> 
+    
+      <!-- Simple Pop-up -->
+  <div class="popup" *ngIf="showDialog">
+    <div class="popup-content">
+      <h2>Gracias por tu donación</h2>
+      <p>Tu ayuda salva vidas. ¡Gracias por tu generosidad!</p>
+      <button (click)="closeDialog()">Cerrar</button>
     </div>
+  </div>
+</div>
+
 
     <!-- IMAGENES DE DONACIONES Y VOLUNTARIADO -->
     <div>
@@ -62,4 +73,4 @@
       </div>
       </div>
     </div>
-  </div> 
+

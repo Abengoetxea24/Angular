@@ -13,6 +13,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
 import { FormDonacionComponent } from './Components/form-donacion/form-donacion.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { DonationPopUpComponent } from './Components/donation-pop-up/donation-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './Components/footer/footer.component';
     NavbarComponent,
     FormRescatadosComponent,
     FormDonacionComponent,
-    FooterComponent
+    FooterComponent,
+    DonationPopUpComponent
   ],
   imports: [
     BrowserModule,

@@ -189,8 +189,8 @@
 }
 
 .ayudas-image {
-  width: 100%;
-  height: auto;
+  width: 500px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(50%); /*Ajustar la visibilidad de la imagen para que se vea el texto*/
@@ -273,7 +273,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #8698a2;
 }
 
 .error {
@@ -282,4 +282,43 @@ button:hover {
   margin-top: -0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+/*ESTILOS POPUP FORMULARIO ENVIADO*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #233a50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #8698a2;
 }/*# sourceMappingURL=form-donacion.component.css.map */
