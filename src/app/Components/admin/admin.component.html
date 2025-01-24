@@ -1,13 +1,40 @@
-<p>admin works!</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <button routerLink="/Form-rescatados">Añadir rescatados</button>
-</body>
-</html>
+<div>
+  <!-- Botón para redirigir al formulario de añadir rescatados -->
+  <button routerLink="/form-rescatados" routerLink="/Form-rescatados" class="btn btn-primary">Añadir Rescatado</button>
 
+  <!-- Tabla que muestra la lista de rescatados -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Sexo</th>
+        <th>Procedencia</th>
+        <th>Valoración Médica</th>
+        <th>Médico ID</th>
+        <th>Rescate ID</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iteramos sobre los rescatados para mostrarlos en la tabla -->
+      <tr *ngFor="let rescatado of rescatados; let i = index">
+        <td>{{ rescatado.nombre }}</td>
+        <td>{{ rescatado.apellido }}</td>
+        <td>{{ rescatado.edad }}</td>
+        <td>{{ rescatado.sexo }}</td>
+        <td>{{ rescatado.procedencia }}</td>
+        <td>{{ rescatado.valoracion_medica }}</td>
+        <td>{{ rescatado.medico_id }}</td>
+        <td>{{ rescatado.rescate_id }}</td>
+        <td>
+          <!-- Botón para editar (redirige al formulario con el índice del rescatado) -->
+          <button class="btn btn-warning" routerLink="/Form-rescatados" [queryParams]="{ index: i }">Editar</button>
+          <!-- Botón para eliminar -->
+          <button class="btn btn-danger" (click)="eliminarRescatado(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
