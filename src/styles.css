@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files *//*# sourceMappingURL=styles.css.map */
+/* You can add global styles to this file, and also import other style files */
+/*Colores*/
+.colornavbar {
+  background-color: #233a50 !important;
+}
+
+.enlaces {
+  color: rgb(108, 35, 35) !important;
+}
+
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-nav {
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-link {
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* Estilo para los enlaces inicial*/
+.navbar .nav-link.enlaces {
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* subrayado */
+.navbar .nav-link.enlaces::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+/* Mostrar subrayado al pasar el mouse */
+.navbar .nav-link.enlaces:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */
