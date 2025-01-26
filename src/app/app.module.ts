@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,FormControl } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -12,6 +13,7 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
 import { FormDonacionComponent } from './Components/form-donacion/form-donacion.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './Components/footer/footer.component';
 
 
@@ -33,7 +35,9 @@ import { FooterComponent } from './Components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
