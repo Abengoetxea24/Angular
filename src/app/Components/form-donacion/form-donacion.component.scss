@@ -1,5 +1,5 @@
-
 @import '../scss/variables';
+@import '../home/home.component.scss';
 
 .tituloDonar{
   text-align: center;
@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: $grisNB;
 }
 
 .error {
@@ -64,4 +64,43 @@ button:hover {
   margin-top: -0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+/*ESTILOS POPUP FORMULARIO ENVIADO*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: $azulNB;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: $grisNB;
 }

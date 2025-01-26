@@ -12,6 +12,8 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FormRescatadosComponent } from './Components/admin/form-rescatados/form-rescatados.component';
 import { FormDonacionComponent } from './Components/form-donacion/form-donacion.component';
+import { FooterComponent } from './Components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormDonacionComponent } from './Components/form-donacion/form-donacion.
     AdminComponent,
     NavbarComponent,
     FormRescatadosComponent,
-    FormDonacionComponent
+    FormDonacionComponent,
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
