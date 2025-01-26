@@ -1,59 +1,76 @@
-<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<div class = "containerPrincipalForm">
+    <h1 class = "tituloDonar">Tu ayuda salva vidas</h1>
+    <div class="form-container">
 
-    Nombre: <input type="text" name="nombre" [(ngModel)]="nombre" /><br>
-  
-    DNI: <input type="text" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br>
-  
-    <div *ngIf="form.submitted || form.controls['dni']?.touched">
-      <div *ngIf="form.controls['dni']?.hasError('required')">
-        <p style="color: red">El DNI es obligatorio.</p>
-      </div>
-      <div *ngIf="form.controls['dni']?.hasError('pattern')">
-        <p style="color: red">El DNI debe tener al menos 8 números y 1 letra al final.</p>
-      </div>
-    </div>
-  
-    Metodo de pago:<br>
-    <input type="radio" [(ngModel)]="pago" name="medotoPago" value="tarjeta" required />Tarjeta<br>
-    <input type="radio" [(ngModel)]="pago" name="medotoPago" value="paypal" />Paypal<br>
-    <input type="radio" [(ngModel)]="pago" name="medotoPago" value="numero-cuenta" />Numero de cuenta<br>
-  
-    <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
-      <p style="color: red;">Por favor, seleccione un método de pago.</p>
-    </div>
-  
-    <button type="submit">ENVIAR</button>
-  
-  </form> -->
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" /><br />
 
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br />
 
-  <div class="form-container">
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" /><br />
-  
-      <label for="dni">DNI:</label>
-      <input type="text" id="dni" name="dni" [(ngModel)]="dni" placeholder="obligatorio" required [pattern]="patternDni" /><br />
-  
-      <div *ngIf="form.submitted || form.controls['dni']?.touched">
-        <div *ngIf="form.controls['dni']?.hasError('required')">
-          <p class="error">El DNI es obligatorio.</p>
+        <div *ngIf="form.submitted || form.controls['dni']?.touched">
+          <div *ngIf="form.controls['dni']?.hasError('required')">
+            <p class="error">El DNI es obligatorio.</p>
+          </div>
+          <div *ngIf="form.controls['dni']?.hasError('pattern')">
+            <p class="error">El DNI debe tener al menos 8 números y 1 letra al final.</p>
+          </div>
         </div>
-        <div *ngIf="form.controls['dni']?.hasError('pattern')">
-          <p class="error">El DNI debe tener al menos 8 números y 1 letra al final.</p>
+
+        <label>Metodo de pago:</label><br />
+        <input type="radio" [(ngModel)]="pago" name="metodoPago" value="tarjeta" required />Tarjeta<br />
+        <input type="radio" [(ngModel)]="pago" name="metodoPago" value="paypal" />Paypal<br />
+        <input type="radio" [(ngModel)]="pago" name="metodoPago" value="numero-cuenta" />Número de cuenta<br />
+
+        <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
+          <p class="error">Por favor, seleccione un método de pago.</p>
         </div>
-      </div>
-  
-      <label>Metodo de pago:</label><br />
-      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="tarjeta" required />Tarjeta<br />
-      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="paypal" />Paypal<br />
-      <input type="radio" [(ngModel)]="pago" name="metodoPago" value="numero-cuenta" />Número de cuenta<br />
-  
-      <div *ngIf="form.submitted && !form.controls['metodoPago']?.valid">
-        <p class="error">Por favor, seleccione un método de pago.</p>
-      </div>
-  
-      <button type="submit">ENVIAR</button>
-    </form>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+    </div> 
+    
+      <!-- Simple Pop-up -->
+  <div class="popup" *ngIf="showDialog">
+    <div class="popup-content">
+      <h2>Gracias por tu donación</h2>
+      <p>Tu ayuda salva vidas. ¡Gracias por tu generosidad!</p>
+      <button (click)="closeDialog()">Cerrar</button>
+    </div>
   </div>
-  
+</div>
+
+
+    <!-- IMAGENES DE DONACIONES Y VOLUNTARIADO -->
+    <div>
+      <div class = "ayudas-container-principal"> 
+        <h5>Tu ayuda nos permite seguir salvando vidas en el mar. </h5>
+      <div class="ayudas-container">
+           
+        <div class="ayudas-item">
+          <a href="../form-donaciones/form-donacion.component.html">
+            <img src="../../../assets/img/voluntariado-sanitario.png" class="ayudas-image" />
+          </a>
+          <div class="ayudas-overlay">
+            <p class="ayudas-text">
+              <strong>SALVAVIDAS</strong><br />
+            </p>
+          </div>
+        </div>
+      
+      
+        <div class="ayudas-item">
+          <a href="../form-donacion/form-donacion.component.html">
+            <img src="../../../assets/img/img.jpg" class="ayudas-image" />
+          </a>
+          <div class="ayudas-overlay">
+            <p class="ayudas-text">
+              <strong>HAY PERSONAS QUE TE NECESITAN</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+

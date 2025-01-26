@@ -1,29 +1,28 @@
+<!-- NAVBAR -->
 
-
-
-<nav *ngIf="visible" class="navbar navbar-expand-lg bg-body-tertiary">
+<nav *ngIf="visible" class="navbar navbar-expand-lg bg-body-tertiary colornavbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">ONG</a>
+      <a class="navbar-brand enlaceInicio" href="#">ONG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-        
+
+
           <li class="nav-item">
-            <a class="nav-link" routerLink="/Form-donacion" (click)="ocultar2()" >Donar</a>
+            <a class="nav-link enlaces" routerLink="/Form-donacion" (click)="ocultar2()" >Donar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/SobreNosotros" (click)="ocultar2()">Sobre Nosotro</a>
+            <a class="nav-link enlaces" routerLink="/SobreNosotros" (click)="ocultar2()">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  routerLink="/Login"(click)="ocultar()" (click)="ocultar2()">Login</a>
-          
-          
+            <a class="nav-link enlaces"  routerLink="/Login"(click)="ocultar()" (click)="ocultar2()">Login</a>
+
+
         </ul>
         <form class="d-flex" role="search">
-    
+
         </form>
       </div>
     </div>
@@ -31,6 +30,7 @@
 <div *ngIf="visible2">
    <app-home></app-home>
 </div>
- 
 
+
+<!-- <app-footer></app-footer> -->
 <router-outlet></router-outlet>

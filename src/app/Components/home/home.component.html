@@ -68,8 +68,8 @@
 
 <!-- Como ayudar -->
 
-<div class="secionAyudaContainer">
-  <div class="secionAyuda">
+<div class="seccionAyudaContainer">
+  <div class="seccionAyuda">
     <img src="../../../assets/img/campamento_refugiados.jpg" />
     <div class="text">
       <P
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <div class="secionAyuda">
+  <div class="seccionAyuda">
     <div class="text">
       <P
         >La organización y desarrollo de Salvamento Marítimo parte de la
@@ -102,7 +102,7 @@
     <img src="../../../assets/img/campamento_refugiados2.jpg" />
   </div>
 
-  <div class="secionAyuda">
+  <div class="seccionAyuda">
     <img src="../../../assets/img/comoayudar.jpg" />
     <div class="text">
       <P
@@ -129,20 +129,37 @@
   </div>
 </div>
 
-<!-- FLIP CARDS -->
-<div class="card-container">
-  <div class="flip-card" *ngFor="let card of [1, 2, 3, 4]">
-    <div class="flip-card-inner">
-      <div class="flip-card-front"></div>
-      <div class="flip-card-back">
-        <p>{{ imagenesCards[card - 1].text }}</p>
-      </div>
+<div class = "ayudas-container-principal">
+  <h1>¿Como puedes ayudar?</h1>  
+  <h5>Tu ayuda nos permite seguir salvando vidas en el mar. </h5>
+<div class="ayudas-container">
+     
+  <div class="ayudas-item">
+    <a href="../form-donaciones/form-donacion.component.html">
+      <img src="../../../assets/img/donaciones-div.jpg" class="ayudas-image" />
+    </a>
+    <div class="ayudas-overlay">
+      <p class="ayudas-text">
+        <strong>DONA</strong><br />
+      </p>
     </div>
   </div>
+
+
+  <div class="ayudas-item">
+    <a href="../form-donacion/form-donacion.component.html">
+      <img src="../../../assets/img/voluntariado-div.jpg" class="ayudas-image" />
+    </a>
+    <div class="ayudas-overlay">
+      <p class="ayudas-text">
+        <strong>VOLUNTARIADO</strong>
+      </p>
+    </div>
+  </div>
+</div>
 </div>
 
 
 
-<footer>
-  <h1>SMG</h1>
-</footer>
+
+

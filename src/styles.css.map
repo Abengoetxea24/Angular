@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sources":["styles.scss","app/Components/scss/_variables.scss","styles.css"],"names":[],"mappings":"AAAA,8EAAA;ACAA,UAAA;ADGA;EACE,oCAAA;AEAF;;AFGA;EACE,kCAAA;AEAF;;AFGA;EACE,kBAAA;AEAF;;AFGA;EACE,uBAAA;EACA,OAAA;AEAF;;AFGA;EACE,kBAAA;EAEA,gCAAA;EACA,WAAA;EACA,eAAA;EACA,qBAAA;AEDF;;AFIA,mCAAA;AACA;EACE,qBAAA;EACA,kBAAA;EACA,2BAAA;AEDF;;AFIA,cAAA;AACA;EACE,WAAA;EACA,kBAAA;EACA,OAAA;EACA,SAAA;EACA,QAAA;EACA,WAAA;EACA,yBAAA;EACA,2BAAA;AEDF;;AFIA,wCAAA;AACA;EACE,WAAA;AEDF","file":"styles.css"}
+=======
+{"version":3,"sources":[],"names":[],"mappings":"","file":"styles.css"}
+>>>>>>> 9b4aab88f8f4e53eb6efd437fb108c7760ad12c5
