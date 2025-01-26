@@ -26,8 +26,8 @@
         <td>{{ rescatado.sexo }}</td>
         <td>{{ rescatado.procedencia }}</td>
         <td>{{ rescatado.valoracion_medica }}</td>
-        <td>{{ rescatado.medico_id }}</td>
-        <td>{{ rescatado.rescate_id }}</td>
+        <td>{{ rescatado.medicos_id }}</td>
+        <td>{{ rescatado.rescates_id }}</td>
         <td>
           <!-- Botón para editar (redirige al formulario con el índice del rescatado) -->
           <button class="btn btn-warning" routerLink="/Form-rescatados" [queryParams]="{ index: i }">Editar</button>
