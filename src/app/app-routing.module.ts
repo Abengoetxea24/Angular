@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'Admin', component: AdminComponent}, 
   {path: 'Navbar', component: NavbarComponent},
   {path: 'Form-rescatados', component: FormRescatadosComponent},
+  { path: 'Form-rescatados/:id', component: FormRescatadosComponent },
   {path: 'Form-donacion', component: FormDonacionComponent},
 
 

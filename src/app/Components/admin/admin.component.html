@@ -1,6 +1,6 @@
 <div>
   <!-- Botón para redirigir al formulario de añadir rescatados -->
-  <button routerLink="/form-rescatados" routerLink="/Form-rescatados" class="btn btn-primary">Añadir Rescatado</button>
+  <button routerLink="/Form-rescatados" class="btn btn-primary">Añadir Rescatado</button>
 
   <!-- Tabla que muestra la lista de rescatados -->
   <table class="table">
@@ -29,8 +29,8 @@
         <td>{{ rescatado.medicos_id }}</td>
         <td>{{ rescatado.rescates_id }}</td>
         <td>
-          <!-- Botón para editar (redirige al formulario con el índice del rescatado) -->
-          <button class="btn btn-warning" routerLink="/Form-rescatados" [queryParams]="{ index: i }">Editar</button>
+          <!-- Botón para editar (redirige al formulario con el ID del rescatado) -->
+          <button class="btn btn-warning" [routerLink]="['/Form-rescatados', rescatado.id]">Editar</button>
           <!-- Botón para eliminar -->
           <button class="btn btn-danger" (click)="eliminarRescatado(i)">Eliminar</button>
         </td>

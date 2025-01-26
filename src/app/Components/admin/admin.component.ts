@@ -9,18 +9,15 @@ import { ServicesService } from 'src/app/Services/services.service'; // Importam
 export class AdminComponent implements OnInit {
   rescatados: any[] = []; // Lista de rescatados que se mostrará en la tabla
   displayedColumns: string[] = ['nombre', 'edad', 'acciones']; // Columnas que se mostrarán en la tabla
-  constructor(private servicesService: ServicesService) {} 
-  // Inyectamos el servicio en el constructor para acceder a los métodos y observables
+
+  constructor(private servicesService: ServicesService) {}
 
   ngOnInit() {
     // Nos suscribimos al observable `rescatados$` para obtener los datos en tiempo real
-    this.servicesService.cargarRescatados();
-
-  // Suscribirse al observable para actualizar la lista local
     this.servicesService.rescatados$.subscribe((data) => {
-    this.rescatados = data; // Actualizamos la lista local
-    console.log(this.rescatados);
-  });
+      this.rescatados = data; // Actualizamos la lista local con los rescatados
+      console.log(this.rescatados); // Verificar los datos en consola
+    });
   }
 
   // Método para eliminar un rescatado según su índice

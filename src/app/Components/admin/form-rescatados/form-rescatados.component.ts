@@ -14,9 +14,11 @@ export class FormRescatadosComponent implements OnInit {
   sexo = '';
   procedencia = '';
   valoracion_medica = '';
-  medico_id = '';
-  rescate_id = '';
+  medicos_id = '';
+  rescates_id = '';
   index: number | null = null; // Índice del rescatado a editar
+  id: number | null = null; // Agregar la propiedad id
+
   rescatados: Rescatado[] = []; // Lista local de rescatados
 
   constructor(
@@ -32,47 +34,48 @@ export class FormRescatadosComponent implements OnInit {
     // Suscribirse al observable para actualizar la lista local
     this.servicesService.rescatados$.subscribe((data) => {
       this.rescatados = data;
-    });
 
-    // Rellenar datos del formulario si se edita un rescatado
-    this.route.queryParams.subscribe((params) => {
-      if (params['index'] !== undefined) {
-        this.index = +params['index'];
-        const rescatado = this.rescatados[this.index];
-        if (rescatado) {
-          this.nombre = rescatado.nombre;
-          this.apellido = rescatado.apellido;
-          this.edad = rescatado.edad;
-          this.sexo = rescatado.sexo;
-          this.procedencia = rescatado.procedencia;
-          this.valoracion_medica = rescatado.valoracion_medica;
-          this.medico_id = rescatado.medico_id;
-          this.rescate_id = rescatado.rescate_id;
+      // Comprobar si tenemos un parámetro de id para la edición
+      this.route.params.subscribe((params) => {
+        const id = +params['id'];  // Convertir el id a un número
+        if (id) {
+          this.id = id;  // Asignar el id recibido de la URL
+          this.index = this.rescatados.findIndex(rescatado => rescatado.id === id);
+          if (this.index !== -1) {
+            const rescatado = this.rescatados[this.index];
+            this.nombre = rescatado.nombre;
+            this.apellido = rescatado.apellido;
+            this.edad = rescatado.edad;
+            this.sexo = rescatado.sexo;
+            this.procedencia = rescatado.procedencia;
+            this.valoracion_medica = rescatado.valoracion_medica;
+            this.medicos_id = rescatado.medicos_id;
+            this.rescates_id = rescatado.rescates_id;
+          }
         }
-      }
+      });
     });
   }
 
-  // Guardar un nuevo rescatado o actualizar uno existente
   guardarRescatado() {
     const rescatado: Rescatado = {
+      id: this.index === null ? this.rescatados.length + 1 : this.rescatados[this.index].id,  // Asignar un id único
       nombre: this.nombre,
       apellido: this.apellido,
       edad: this.edad,
       sexo: this.sexo,
       procedencia: this.procedencia,
       valoracion_medica: this.valoracion_medica,
-      medico_id: this.medico_id,
-      rescate_id: this.rescate_id,
+      medicos_id: this.medicos_id,
+      rescates_id: this.rescates_id,
     };
-
+  
     if (this.index === null) {
       this.servicesService.agregarRescatado(rescatado);
     } else {
       this.servicesService.actualizarRescatado(this.index, rescatado);
     }
-
+  
     // Navegar de vuelta a la tabla
     this.router.navigate(['/Admin']);
-  }
-}
+}}
