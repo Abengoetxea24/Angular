@@ -14,9 +14,13 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     // Nos suscribimos al observable `rescatados$` para obtener los datos en tiempo real
+    this.servicesService.cargarRescatados();
+
+  // Suscribirse al observable para actualizar la lista local
     this.servicesService.rescatados$.subscribe((data) => {
-      this.rescatados = data; // Actualizamos la lista local cada vez que cambien los datos en el servicio
-    });
+    this.rescatados = data; // Actualizamos la lista local
+    console.log(this.rescatados);
+  });
   }
 
   // Método para eliminar un rescatado según su índice
