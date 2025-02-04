@@ -15,7 +15,10 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     // Nos suscribimos al observable `rescatados$` para obtener los datos en tiempo real
     this.servicesService.rescatados$.subscribe((data) => {
-      this.rescatados = data; // Actualizamos la lista local con los rescatados
+      this.rescatados = data.map((rescatado) => ({
+        ...rescatado,
+        foto: `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100) + 1}.jpg`,
+      })); // Agregamos una URL de foto aleatoria para cada rescatado
       console.log(this.rescatados); // Verificar los datos en consola
     });
   }
